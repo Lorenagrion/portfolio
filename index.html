@@ -1,71 +1,206 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Lorena Grion</title>
+    <meta name="author" content="Lorena Pires Griñón">
+    <title>Portfólio - Lorena Pires Griñón</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset de estilos */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
             color: #333;
+            line-height: 1.6;
         }
+
         header {
-            background-color: #4CAF50;
+            background-color: #007BFF;
             color: white;
-            padding: 1rem;
+            padding: 40px 20px;
             text-align: center;
         }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
         .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
+            width: 85%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
         }
-        h1, h2 {
-            color: #4CAF50;
-        }
-        .project {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        footer {
+
+        h2 {
+            color: #007BFF;
+            font-size: 28px;
+            margin-bottom: 20px;
             text-align: center;
-            padding: 1rem;
-            background-color: #333;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .experience-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-card h3 {
+            font-size: 24px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #007BFF;
+        }
+
+        footer {
+            background-color: #007BFF;
             color: white;
-            margin-top: 2rem;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .experience-card h3 {
+                font-size: 20px;
+            }
+
+            ul li {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Meu Portfólio</h1>
-    </header>
-    <div class="container">
-        <h2>Sobre Mim</h2>
-        <p>Olá! Meu nome é Lorena Grion e este é o meu portfólio de projetos. Aqui você encontrará alguns dos trabalhos que desenvolvi ao longo da minha carreira.</p>
 
-        <h2>Projetos</h2>
-        <div class="project">
-            <h3>Projeto 1: Gnesys - Saúde PME</h3>
-            <p>Contribuí no desenvolvimento de um produto inovador para o segmento de saúde de pequenas e médias empresas.</p>
+<header>
+    <h1>Portfólio de Lorena Pires Griñón</h1>
+    <p>Profissional de TI | Product Owner | Dados e Desenvolvimento</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>Resumo</h2>
+        <p>Sou uma profissional com mais de 5 anos de experiência em Tecnologia da Informação, especializada em desenvolvimento de sistemas, gestão de dados e implementação de soluções em cloud. Tenho forte atuação em metodologias ágeis, gestão de equipes multidisciplinares e foco em resultados de negócios. Tenho expertise em SQL Server, Azure, Google Cloud e SAP S4 Hana, além de ser uma entusiasta na democratização de dados.</p>
+    </section>
+
+    <section>
+        <h2>Experiência Profissional</h2>
+
+        <div class="experience-card">
+            <h3>B2W (Carreira Inicial em Tecnologia)</h3>
+            <ul>
+                <li><strong>Democratização de Dados:</strong> Apoiei iniciativas em GCP, melhorando o acesso a dados e a tomada de decisão estratégica.</li>
+                <li><strong>Educação Corporativa:</strong> Produzi e ministrei cursos de Excel na Academia B2W, capacitando colaboradores internamente.</li>
+                <li><strong>Gestão Ágil:</strong> Como Scrum Master, liderei equipes, facilitando cerimônias ágeis para entregas de alto impacto.</li>
+                <li><strong>Mediação de Eventos:</strong> Mediando meetups sobre dados, alcancei colaboradores e o público externo, ampliando o reconhecimento da empresa no mercado de dados.</li>
+            </ul>
         </div>
-        <div class="project">
-            <h3>Projeto 2: Dashboard de Dados para RH</h3>
-            <p>Automatizei relatórios e implementei um dicionário de dados para melhorar a governança e a segurança dos dados.</p>
+
+        <div class="experience-card">
+            <h3>D'Or (Evolução e Suporte de Produtos)</h3>
+            <ul>
+                <li><strong>Refatoração de Sistema:</strong> Conduzi a migração para microsserviços, implementando segurança avançada e planos de disaster recovery.</li>
+                <li><strong>Expansão de Mercado:</strong> Auxiliei na implantação do Gnesys, gerando um aumento de 200% nas vendas.</li>
+                <li><strong>Manutenção de Dados:</strong> Ajustei sistemas legados e implementei melhorias na nova versão do produto.</li>
+                <li><strong>Gestão Ágil e Liderança:</strong> Coordenei equipes multidisciplinares, garantindo entregas eficientes e alinhamento com stakeholders.</li>
+            </ul>
         </div>
-        <div class="project">
-            <h3>Projeto 3: Sistema de Gerenciamento de Tarefas</h3>
-            <p>Analisei e documentei requisitos para o desenvolvimento de um novo sistema de gestão de tarefas para a empresa Produtiva S.A.</p>
+
+        <div class="experience-card">
+            <h3>Granado Pharmácias (Desenvolvimento de Software e Gestão de Dados)</h3>
+            <ul>
+                <li><strong>Sistema de Esgotamento de Produtos:</strong> Digitalizei o processo, conectando áreas e otimizando recursos, com foco em soluções de baixo custo.</li>
+                <li><strong>Sistemas Satélites:</strong> Desenvolvi funcionalidades para sistemas satélites da empresa, aplicando metodologias ágeis e técnicas de discovery.</li>
+                <li><strong>Gestão de Equipe e Integração de Dados:</strong> Lidero um time de 9 pessoas, desenvolvendo soluções completas de integração e processamento de dados.</li>
+                <li><strong>Integrações com Uber, iFood e Rappi:</strong> Implementei integrações de dados com Uber, iFood e Rappi, ampliando a eficiência operacional e a conexão com parceiros estratégicos.</li>
+                <li><strong>Projeto de Cloud (Google):</strong> Participei da implementação do projeto de cloud, ampliando o uso de dados em áreas não atendidas anteriormente.</li>
+                <li><strong>Ecossistema de Negócios:</strong> Aprofundei meu conhecimento nas áreas de compras, fabricação, vendas B2B/B2C e operações omnichannel e internacionais.</li>
+                <li><strong>Tecnologias Azure, Google e On-Premise:</strong> Trabalhei com soluções on-premise, SQL Server, Azure e Google Cloud, sempre aplicando metodologias ágeis para resultados rápidos e eficientes.</li>
+                <li><strong>Implementação de SAP S4 Hana:</strong> Participei da implementação de SAP S4 Hana na área de BI, otimizando processos de integração e análise de dados.</li>
+            </ul>
         </div>
-    </div>
-    <footer>
-        <p>© 2024 Lorena Grion. Todos os direitos reservados.</p>
-    </footer>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>Contato: lorena.pires@email.com | LinkedIn: <a href="https://www.linkedin.com/in/lorenapires" target="_blank">linkedin.com/in/lorenapires</a></p>
+</footer>
+
 </body>
 </html>
