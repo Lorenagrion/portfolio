@@ -57,25 +57,27 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            grid-row: 2 / 3;
         }
         nav a {
             color: white;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a.active {
+            background-color: #2ecc71;
         }
         nav a:hover {
-            background-color: #2ecc71;
+            background-color: #27ae60;
         }
         section {
             max-width: 800px;
-            margin: 30px auto;
-            padding: 25px;
+            margin: 40px auto;
+            padding: 40px 25px;
             background-color: white;
-            border-radius: 0;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
         }
         section h2 {
             margin-bottom: 15px;
@@ -103,6 +105,13 @@
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .button-top.show {
+            opacity: 1;
+            visibility: visible;
         }
         .button-top:hover {
             background-color: #27ae60;
@@ -118,6 +127,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1001;
+            width: 90%;
+            max-width: 600px;
         }
         .modal-overlay {
             display: none;
@@ -137,6 +148,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         .modal button:hover {
             background-color: #27ae60;
@@ -171,7 +183,7 @@
         </ul>
     </section>
 
-<section id="experiencia">
+    <section id="experiencia">
         <h2>Experiência Profissional</h2>
         <ul>
             <li><strong>Granado Pharmácias</strong>: Product Owner nas áreas de sistemas e dados. Trabalhei no desenvolvimento de sistemas de gestão de processos, digitalizando fluxos internos e promovendo maior integração entre as áreas. Na área de dados, gerenciei a implementação de soluções de integração e processamento, utilizando tecnologias cloud e on-premise.</li>
@@ -188,15 +200,6 @@
             <li>Bacharelado em Gestão Financeira - Estácio de Sá</li>
         </ul>
     </section>
-        <section id="formacao">
-        <h2>Formação</h2>
-        <ul>
-            <li>Master's degree em Sistemas de Computação - UFRJ</li>
-            <li>Especialização em Informática e Educação - CEFET</li>
-            <li>Pós-graduação em Machine Learning - IGTI</li>
-            <li>Bacharelado em Gestão Financeira - Estácio de Sá</li>
-        </ul>
-    </section>
     <section id="referencias">
         <h2>Referências</h2>
         <ul>
@@ -205,7 +208,7 @@
             <li><a href="https://journals-sol.sbc.org.br/index.php/jis/article/view/2686" target="_blank">Artigo Publicado - SBC JIS</a></li>
         </ul>
     </section>
-<section id="contato">
+    <section id="contato">
         <h2>Contato</h2>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/lorena-p-751965117/" target="_blank">Lorena Pires</a></p>
         <p>GitHub: <a href="https://github.com/lorenag" target="_blank">lorenag</a></p>
@@ -221,6 +224,33 @@
     <button class="button-top" onclick="scrollToTop()">&#8679;</button>
 
     <script>
+        window.addEventListener('scroll', () => {
+            const buttonTop = document.querySelector('.button-top');
+            if (window.scrollY > 300) {
+                buttonTop.classList.add('show');
+            } else {
+                buttonTop.classList.remove('show');
+            }
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 50;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
