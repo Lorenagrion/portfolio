@@ -9,13 +9,14 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #ff7eb3, #ff758c, #ff6f61);
-            color: #fff;
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            color: #333;
         }
         header {
-            background: #6a0572;
+            background: #4a90e2;
             text-align: center;
             padding: 50px 20px;
+            color: #fff;
         }
         header img {
             width: 200px;
@@ -33,7 +34,7 @@
         section {
             padding: 30px 20px;
             margin: 20px auto;
-            background: rgba(255, 255, 255, 0.1);
+            background: #fff;
             border-radius: 10px;
             max-width: 900px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -41,7 +42,7 @@
         h2 {
             font-size: 2em;
             margin-bottom: 15px;
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid #4a90e2;
             display: inline-block;
             padding-bottom: 5px;
         }
@@ -52,14 +53,22 @@
         ul li {
             margin-bottom: 15px;
             font-size: 1.1em;
+            cursor: pointer;
+        }
+        ul li ul {
+            display: none;
+            margin-top: 10px;
+            padding-left: 20px;
+            font-size: 1em;
         }
         ul li ul li {
-            font-size: 1em;
             margin-top: 5px;
-            padding-left: 15px;
+        }
+        ul li i {
+            margin-right: 10px;
         }
         a {
-            color: #ffd700;
+            color: #4a90e2;
             text-decoration: none;
         }
         a:hover {
@@ -68,16 +77,24 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #6a0572;
+            background: #4a90e2;
             color: #fff;
             margin-top: 30px;
         }
     </style>
+    <script>
+        function toggleSubtopics(event) {
+            const subtopics = event.currentTarget.querySelector('ul');
+            if (subtopics) {
+                subtopics.style.display = subtopics.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         <img src="perfil.jpg" alt="Foto de Lorena Pires Griõn">
-        <h1>Lorena Pires Griñón</h1>
+        <h1>Lorena Pires Griõn</h1>
         <p>Produtos Digitais e Dados</p>
     </header>
     <section>
@@ -100,7 +117,7 @@
     <section>
         <h2>Principais Projetos</h2>
         <ul>
-            <li>Desenvolvimento do sistema Gnesys para saúde de PMEs:
+            <li onclick="toggleSubtopics(event)">Desenvolvimento do sistema Gnesys para saúde de PMEs: <i>▼</i>
                 <ul>
                     <li>Refatoração de Sistema: Conduzi a migração para microsserviços, implementando segurança avançada e planos de disaster recovery.</li>
                     <li>Expansão de Mercado: Auxiliei na implantação do Gnesys, gerando um aumento de 200% nas vendas.</li>
@@ -108,37 +125,37 @@
                     <li>Gestão Ágil e Liderança Indireta: Coordenei equipes multidisciplinares, garantindo entregas eficientes e alinhamento com stakeholders.</li>
                 </ul>
             </li>
-            <li>Digitalização de processos de P&D:
+            <li onclick="toggleSubtopics(event)">Digitalização de processos de P&D: <i>▼</i>
                 <ul>
                     <li>Solução que conectou diversas áreas e promoveu maior visibilidade operacional.</li>
                 </ul>
             </li>
-            <li>Implementação do SAP S4 Hana na área de BI:
+            <li onclick="toggleSubtopics(event)">Implementação do SAP S4 Hana na área de BI: <i>▼</i>
                 <ul>
                     <li>Coordenação de migração de dados de BI.</li>
                 </ul>
             </li>
-            <li>Integração de dados com APIs (Uber, Ifood e Rappi):
+            <li onclick="toggleSubtopics(event)">Integração de dados com APIs (Uber, Ifood e Rappi): <i>▼</i>
                 <ul>
                     <li>Integrações para otimizar cadastros, BI e processos logísticos.</li>
                 </ul>
             </li>
-            <li>Projetos de Machine Learning para vendas e estoque:
+            <li onclick="toggleSubtopics(event)">Projetos de Machine Learning para vendas e estoque: <i>▼</i>
                 <ul>
                     <li>Projeto de Machine Learning para sugerir vendas e otimizar o abastecimento de estoque, reduzindo desperdícios e aumentando a receita.</li>
                 </ul>
             </li>
-            <li>Implementação de sistemas financeiros e contábeis:
+            <li onclick="toggleSubtopics(event)">Implementação de sistemas financeiros e contábeis: <i>▼</i>
                 <ul>
                     <li>Implementação de sistemas financeiros e contábeis que melhoraram a gestão de fluxo de caixa e consolidaram orçamento.</li>
                 </ul>
             </li>
-            <li>Disciplina: Engenharia de Requisitos de Software para Afya (2024):
+            <li onclick="toggleSubtopics(event)">Disciplina: Engenharia de Requisitos de Software para Afya (2024): <i>▼</i>
                 <ul>
                     <li>Desenvolvi a disciplina de Engenharia de Requisitos de Software para o curso de Sistemas de Computação da Afya em 2024, abordando práticas modernas de requisitos.</li>
                 </ul>
             </li>
-            <li>Disciplina: Gestão de Produtos Digitais para Universidade Veiga de Almeida (2023):
+            <li onclick="toggleSubtopics(event)">Disciplina: Gestão de Produtos Digitais para Universidade Veiga de Almeida (2023): <i>▼</i>
                 <ul>
                     <li>Fui autora da disciplina Gestão de Produtos Digitais para a Universidade Veiga de Almeida em 2023, integrando conceitos de produto com metodologias ágeis.</li>
                 </ul>
