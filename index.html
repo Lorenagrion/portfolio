@@ -21,9 +21,9 @@
             background-color: #34495e;
             color: white;
             padding: 20px;
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 1fr;
             align-items: center;
-            justify-content: space-between;
             grid-row: 1 / 2;
             grid-column: 1 / -1;
         }
@@ -34,7 +34,6 @@
             border: 4px solid #2ecc71;
         }
         header .title {
-            margin-right: auto;
             margin-left: 20px;
         }
         header h1 {
@@ -73,7 +72,6 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            grid-row: 3 / 4;
         }
         section h2 {
             margin-bottom: 15px;
@@ -89,7 +87,6 @@
             padding: 15px 10px;
             background-color: #34495e;
             color: white;
-            grid-row: 4 / 5;
         }
         .button-top {
             position: fixed;
@@ -176,7 +173,7 @@
     <section id="projetos">
         <h2>Principais Projetos</h2>
         <ul>
-            <li><button onclick="showModal('gnesys')">Sistema Health Insurance</button></li>
+            <li><button onclick="showModal('gnesys')">Case Gnesys</button></li>
             <li><button onclick="showModal('sap')">Implementação do SAP S4 Hana na área de BI</button></li>
             <li><button onclick="showModal('pnd')">Digitalização de processos de P&D na Granado</button></li>
             <li><button onclick="showModal('integracao')">Integração com Uber, Ifood e Rappi</button></li>
@@ -187,14 +184,6 @@
         </ul>
     </section>
     <section id="contato">
-    <section id="referencias">
-        <h2>Referências</h2>
-        <ul>
-            <li><a href="https://www.ppgi.ufrj.br/2022/08/08/fwd-defesa-de-mestrado-lorena-pires-grion/" target="_blank">Dissertação de Mestrado - Sistemas de Computação (UFRJ)</a></li>
-            <li><a href="https://www.researchgate.net/publication/351235743_Technology_Adoption_for_Brazilian_Socioemotional_Initiatives_at_School" target="_blank">Artigo - Technology Adoption for Brazilian Socioemotional Initiatives at School</
-            <li><a href="https://journals-sol.sbc.org.br/index.php/jis/article/view/2686" target="_blank">Artigo Publicado - SBC JIS</a></li>
-        </ul>
-    </section>
         <h2>Contato</h2>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/lorena-p-751965117/" target="_blank">Lorena Pires</a></p>
         <p>GitHub: <a href="https://github.com/lorenag" target="_blank">lorenag</a></p>
@@ -216,22 +205,23 @@
 
         function showModal(project) {
             const content = {
-                er_afya: "Desenvolvi a disciplina de Engenharia de Requisitos de Software para o curso de Sistemas de Computação da Afya em 2024, abordando práticas modernas de requisitos.",
-                gp_uva: "Fui autora da disciplina Gestão de Produtos Digitais para a Universidade Veiga de Almeida em 2023, integrando conceitos de produto com metodologias ágeis.",
+                gnesys: `
+                    <ul>
+                        <li><strong>Refatoração de Sistema:</strong> Conduzi a migração para microsserviços, implementando segurança avançada e planos de disaster recovery.</li>
+                        <li><strong>Expansão de Mercado:</strong> Auxiliei na implantação do Gnesys, gerando um aumento de 200% nas vendas.</li>
+                        <li><strong>Manutenção de Dados:</strong> Ajustei sistemas legados e implementei melhorias na nova versão do produto.</li>
+                        <li><strong>Gestão Ágil e Liderança:</strong> Coordenei equipes multidisciplinares, garantindo entregas eficientes e alinhamento com stakeholders.</li>
+                    </ul>
+                `,
                 sap: "Projeto que envolveu a melhoria de processos de BI com foco em eficiência e integração.",
                 pnd: "Solução que conectou áreas e promoveu maior visibilidade operacional.",
                 integracao: "Estruturação de APIs para otimizar entregas e processos logísticos.",
-                financeiro: "Implementação de sistemas financeiros e contábeis que melhoraram a gestão de fluxo de caixa e consolida orçamento.",
+                financeiro: "Implementação de sistemas financeiros e contábeis que melhoraram a gestão de fluxo de caixa e consolidaram orçamento.",
                 ml: "Projeto de Machine Learning para sugerir vendas e otimizar o abastecimento de estoque, reduzindo desperdícios e aumentando a receita.",
-                gnesys: `
-                        <ul>
-                            <li><strong>Refatoração de Sistema:</strong> Conduzi a migração para microsserviços, implementando segurança avançada e planos de disaster recovery.</li>
-                            <li><strong>Expansão de Mercado:</strong> Auxiliei na implantação do Gnesys, gerando um aumento de 200% nas vendas.</li>
-                            <li><strong>Manutenção de Dados:</strong> Ajustei sistemas legados e implementei melhorias na nova versão do produto.</li>
-                            <li><strong>Gestão Ágil e Liderança:</strong> Coordenei equipes multidisciplinares, garantindo entregas eficientes e alinhamento com stakeholders.</li>
-                        </ul>
-                    `,            };
-            document.getElementById('modal-content').innerText = content[project];
+                er_afya: "Desenvolvi a disciplina de Engenharia de Requisitos de Software para o curso de Sistemas de Computação da Afya em 2024, abordando práticas modernas de requisitos.",
+                gp_uva: "Fui autora da disciplina Gestão de Produtos Digitais para a Universidade Veiga de Almeida em 2023, integrando conceitos de produto com metodologias ágeis."
+            };
+            document.getElementById('modal-content').innerHTML = content[project];
             document.getElementById('modal').style.display = 'block';
             document.getElementById('modal-overlay').style.display = 'block';
         }
