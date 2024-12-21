@@ -12,6 +12,10 @@
             background-color: #eef2f3;
             color: #2c3e50;
             line-height: 1.6;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
         }
         header {
             background-color: #34495e;
@@ -20,19 +24,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: relative;
+            grid-row: 1 / 2;
+            grid-column: 1 / -1;
         }
         header img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             border: 4px solid #2ecc71;
-            position: absolute;
-            top: 20px;
-            right: 20px;
         }
         header .title {
-            margin-right: 150px;
+            margin-right: auto;
+            margin-left: 20px;
         }
         header h1 {
             margin: 0;
@@ -52,6 +55,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            grid-row: 2 / 3;
         }
         nav a {
             color: white;
@@ -69,6 +73,7 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            grid-row: 3 / 4;
         }
         section h2 {
             margin-bottom: 15px;
@@ -84,7 +89,7 @@
             padding: 15px 10px;
             background-color: #34495e;
             color: white;
-            margin-top: 30px;
+            grid-row: 4 / 5;
         }
         .button-top {
             position: fixed;
@@ -171,6 +176,7 @@
     <section id="projetos">
         <h2>Principais Projetos</h2>
         <ul>
+            <li><button onclick="showModal('gnesys')">Sistema Health Insurance</button></li>
             <li><button onclick="showModal('sap')">Implementação do SAP S4 Hana na área de BI</button></li>
             <li><button onclick="showModal('pnd')">Digitalização de processos de P&D na Granado</button></li>
             <li><button onclick="showModal('integracao')">Integração com Uber, Ifood e Rappi</button></li>
@@ -185,7 +191,7 @@
         <h2>Referências</h2>
         <ul>
             <li><a href="https://www.ppgi.ufrj.br/2022/08/08/fwd-defesa-de-mestrado-lorena-pires-grion/" target="_blank">Dissertação de Mestrado - Sistemas de Computação (UFRJ)</a></li>
-            <li><a href="https://www.researchgate.net/publication/351235743_Technology_Adoption_for_Brazilian_Socioemotional_Initiatives_at_School" target="_blank">Artigo - Technology Adoption for Brazilian Socioemotional Initiatives at School</a></li>
+            <li><a href="https://www.researchgate.net/publication/351235743_Technology_Adoption_for_Brazilian_Socioemotional_Initiatives_at_School" target="_blank">Artigo - Technology Adoption for Brazilian Socioemotional Initiatives at School</
             <li><a href="https://journals-sol.sbc.org.br/index.php/jis/article/view/2686" target="_blank">Artigo Publicado - SBC JIS</a></li>
         </ul>
     </section>
@@ -216,8 +222,15 @@
                 pnd: "Solução que conectou áreas e promoveu maior visibilidade operacional.",
                 integracao: "Estruturação de APIs para otimizar entregas e processos logísticos.",
                 financeiro: "Implementação de sistemas financeiros e contábeis que melhoraram a gestão de fluxo de caixa e consolida orçamento.",
-                ml: "Projeto de Machine Learning para sugerir vendas e otimizar o abastecimento de estoque, reduzindo desperdícios e aumentando a receita."
-            };
+                ml: "Projeto de Machine Learning para sugerir vendas e otimizar o abastecimento de estoque, reduzindo desperdícios e aumentando a receita.",
+                gnesys: `
+                        <ul>
+                            <li><strong>Refatoração de Sistema:</strong> Conduzi a migração para microsserviços, implementando segurança avançada e planos de disaster recovery.</li>
+                            <li><strong>Expansão de Mercado:</strong> Auxiliei na implantação do Gnesys, gerando um aumento de 200% nas vendas.</li>
+                            <li><strong>Manutenção de Dados:</strong> Ajustei sistemas legados e implementei melhorias na nova versão do produto.</li>
+                            <li><strong>Gestão Ágil e Liderança:</strong> Coordenei equipes multidisciplinares, garantindo entregas eficientes e alinhamento com stakeholders.</li>
+                        </ul>
+                    `,            };
             document.getElementById('modal-content').innerText = content[project];
             document.getElementById('modal').style.display = 'block';
             document.getElementById('modal-overlay').style.display = 'block';
