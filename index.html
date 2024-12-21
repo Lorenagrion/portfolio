@@ -9,305 +9,104 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #eef2f3;
-            color: #2c3e50;
-            line-height: 1.6;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            grid-template-columns: 1fr;
-            min-height: 100vh;
+            background-color: #f9f9f9;
+            color: #333;
         }
         header {
-            background-color: #34495e;
-            color: white;
-            padding: 20px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            grid-row: 1 / 2;
-            grid-column: 1 / -1;
+            background-color: #6200ea;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
         header img {
-            width: 100px;
-            height: 100px;
+            width: 150px;
             border-radius: 50%;
-            border: 4px solid #2ecc71;
-            margin-right: 20px;
-        }
-        header .title {
-            flex-grow: 1;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
-            line-height: 1.2;
-        }
-        header h2 {
-            margin: 5px 0 0;
-            font-weight: normal;
-            font-size: 1.2em;
-            color: #2ecc71;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 15px 10px;
-            background-color: #2c3e50;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        nav a.active {
-            background-color: #2ecc71;
-        }
-        nav a:hover {
-            background-color: #27ae60;
-        }
-        section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 40px 25px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        section h2 {
             margin-bottom: 15px;
         }
-        section .content {
-            padding-left: 20px;
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        section .content li {
+        h1, h2 {
+            color: #6200ea;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
             margin-bottom: 10px;
+        }
+        a {
+            color: #6200ea;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
-            padding: 15px 10px;
-            background-color: #34495e;
-            color: white;
-        }
-        .button-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #2ecc71;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .button-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        .button-top:hover {
-            background-color: #27ae60;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1001;
-            width: 90%;
-            max-width: 600px;
-        }
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-        .modal button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #2ecc71;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .modal button:hover {
-            background-color: #27ae60;
+            background-color: #333;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="perfil.jpg" alt="Foto de Lorena Pires Griõn">
-        <div class="title">
-            <h1>Lorena Pires Griõn</h1>
-            <h2>Portfólio</h2>
-        </div>
+        <img src="perfil.jpg" alt="Lorena Pires Griñón">
+        <h1>Lorena Pires Griñón</h1>
+        <p>Produtos Digitais e Dados</p>
     </header>
-    <nav>
-        <a href="#formacao">Formação</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-    </nav>
-    <section id="projetos">
-        <h2>Principais Projetos</h2>
-        <ul class="content">
-            <li><button onclick="showModal('gnesys')">Case Health Insurance</button></li>
-            <li><button onclick="showModal('sap')">Implementação do SAP S4 Hana na área de BI</button></li>
-            <li><button onclick="showModal('pnd')">Digitalização de processos de P&D na Granado</button></li>
-            <li><button onclick="showModal('integracao')">Integração com Uber, Ifood e Rappi</button></li>
-            <li><button onclick="showModal('financeiro')">Implementação de sistemas financeiros e contábeis</button></li>
-            <li><button onclick="showModal('ml')">Projetos de Machine Learning para sugestão de vendas e abastecimento de estoque</button></li>
-            <li><button onclick="showModal('er_afya')">Disciplina: Engenharia de Requisitos de Software para Afya (2024)</button></li>
-            <li><button onclick="showModal('gp_uva')">Disciplina: Gestão de Produtos Digitais para Universidade Veiga de Almeida (2023)</button></li>
-        </ul>
-    </section>
-
-    <section id="experiencia">
-        <h2>Experiência Profissional</h2>
-        <ul class="content">
-            <li><strong>Granado Pharmácias</strong>: Product Owner nas áreas de sistemas e dados. Trabalhei no desenvolvimento de sistemas de gestão de processos, digitalizando fluxos internos e promovendo maior integração entre as áreas. Na área de dados, gerenciei a implementação de soluções de integração e processamento, utilizando tecnologias cloud e on-premise.</li>
-            <li><strong>D'Or PME</strong>: Participei da criação e desenvolvimento do Gnesys, um produto inovador voltado para pequenas e médias empresas no segmento de saúde, atuando como ponto focal para levantamento de requisitos e acompanhamento das entregas.</li>
-            <li><strong>B2W</strong>: Atuei em projetos de democratização de dados utilizando a infraestrutura em nuvem da Google Cloud Platform, além de criar cursos para a B2W Academy e mediar eventos voltados para a troca de conhecimento técnico e estratégico.</li>
-        </ul>
-    </section>
-    <section id="formacao">
+    <section>
         <h2>Formação</h2>
-        <ul class="content">
+        <ul>
             <li>Master's degree em Sistemas de Computação - UFRJ</li>
             <li>Especialização em Informática e Educação - CEFET</li>
             <li>Pós-graduação em Machine Learning - IGTI</li>
             <li>Bacharelado em Gestão Financeira - Estácio de Sá</li>
         </ul>
     </section>
-    <section id="referencias">
-        <h2>Referências</h2>
-        <ul class="content">
-            <li><a href="https://www.ppgi.ufrj.br/2022/08/08/fwd-defesa-de-mestrado-lorena-pires-grion/" target="_blank">Dissertação de Mestrado - Sistemas de Computação (UFRJ)</a></li>
-            <li><a href="https://www.researchgate.net/publication/351235743_Technology_Adoption_for_Brazilian_Socioemotional_Initiatives_at_School" target="_blank">Artigo - Technology Adoption for Brazilian Socioemotional Initiatives at School</a></li>
-            <li><a href="https://journals-sol.sbc.org.br/index.php/jis/article/view/2686" target="_blank">Artigo Publicado - SBC JIS</a></li>
+    <section>
+        <h2>Experiência Profissional</h2>
+        <ul>
+            <li>Granado Pharmácias: Product Owner nas áreas de sistemas e dados.</li>
+            <li>D'Or PME: Product Owner nas áreas de sistemas e dados.</li>
+            <li>B2W: Scrum da Tribe Projetos de democratização de dados.</li>
         </ul>
     </section>
-    <section id="contato">
+    <section>
+        <h2>Principais Projetos</h2>
+        <ul>
+            <li>Desenvolvimento do sistema Gnesys para saúde de PMEs.</li>
+            <li>Digitalização de processos de P&D.</li>
+            <li>Implementação do SAP S4 Hana na área de BI.</li>
+            <li>Integração de dados com APIs (Uber, Ifood e Rappi).</li>
+            <li>Projetos de Machine Learning para vendas e estoque.</li>
+            <li>Implementação de sistemas financeiros e contábeis.</li>
+            <li>Disciplina: Engenharia de Requisitos de Software para Afya (2024).</li>
+            <li>Disciplina: Gestão de Produtos Digitais para Universidade Veiga de Almeida (2023).</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://www.ppgi.ufrj.br/2022/08/08/fwd-defesa-de-mestrado-lorena-pires-grion/">Dissertação de Mestrado - Sistemas de Computação (UFRJ)</a></li>
+            <li><a href="https://www.researchgate.net/publication/351235743_Technology_Adoption_for_Brazilian_Socioemotional_Initiatives_at_School">Artigo - Technology Adoption for Brazilian Socioemotional Initiatives at School</a></li>
+            <li><a href="https://journals-sol.sbc.org.br/index.php/jis/article/view/2686">Artigo Publicado - SBC JIS</a></li>
+        </ul>
+    </section>
+    <section>
         <h2>Contato</h2>
-        <ul class="content">
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/lorena-p-751965117/" target="_blank">lorena-p-751965117</a></li>
-            <li>Medium: <a href="https://medium.com/@lorenagrion" target="_blank">@lorenagrion</a></li>
-            <li>GitHub: <a href="https://github.com/lorenag" target="_blank">lorenag</a></li>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/lorena-p-751965117/">LinkedIn</a></li>
+            <li><a href="https://medium.com/@lorenagrion">Medium</a></li>
+            <li><a href="https://github.com/lorenag">GitHub</a></li>
         </ul>
     </section>
     <footer>
-        <p>&copy; 2024 Lorena Pires Griõn. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Lorena Pires Griõn - Todos os direitos reservados.</p>
     </footer>
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="modal" id="modal">
-        <p id="modal-content"></p>
-        <button onclick="closeModal()">Fechar</button>
-    </div>
-    <button class="button-top" onclick="scrollToTop()">&#8679;</button>
-
-    <script>
-        function debounce(func, wait) {
-            let timeout;
-            return function(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func.apply(this, args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
-        function handleScroll() {
-            toggleButtonTop();
-            highlightCurrentSection();
-        }
-
-        function toggleButtonTop() {
-            const buttonTop = document.querySelector('.button-top');
-            if (window.scrollY > 300) {
-                buttonTop.classList.add('show');
-            } else {
-                buttonTop.classList.remove('show');
-            }
-        }
-
-        function highlightCurrentSection() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            let current = "";
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 50;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', debounce(handleScroll, 100));
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function showModal(project) {
-            const content = {
-                gnesys: `
-                    <ul>
-                        <li><strong>Refatoração de Sistema:</strong> Conduzi a migração para microsserviços, implementando segurança avançada e planos de disaster recovery.</li>
-                        <li><strong>Expansão de Mercado:</strong> Auxiliei na implantação do Gnesys, gerando um aumento de 200% nas vendas.</li>
-                        <li><strong>Manutenção de Dados:</strong> Ajustei sistemas legados e implementei melhorias na nova versão do produto.</li>
-                        <li><strong>Gestão Ágil e Liderança:</strong> Coordenei equipes multidisciplinares, garantindo entregas eficientes e alinhamento com stakeholders.</li>
-                    </ul>
-                `,
-                sap: "Projeto que envolveu a melhoria de processos de BI com foco em eficiência e integração.",
-                pnd: "Solução que conectou áreas e promoveu maior visibilidade operacional.",
-                integracao: "Estruturação de APIs para otimizar entregas e processos logísticos.",
-                financeiro: "Implementação de sistemas financeiros e contábeis que melhoraram a gestão de fluxo de caixa e consolidaram orçamento.",
-                ml: "Projeto de Machine Learning para sugerir vendas e otimizar o abastecimento de estoque, reduzindo desperdícios e aumentando a receita.",
-                er_afya: "Desenvolvi a disciplina de Engenharia de Requisitos de Software para o curso de Sistemas de Computação da Afya em 2024, abordando práticas modernas de requisitos.",
-                gp_uva: "Fui autora da disciplina Gestão de Produtos Digitais para a Universidade Veiga de Almeida em 2023, integrando conceitos de produto com metodologias ágeis."
-            };
-            const sanitizedContent = document.createElement('div');
-            sanitizedContent.textContent = content[project];
-            document.getElementById('modal-content').innerHTML = sanitizedContent.innerHTML;
-            document.getElementById('modal').style.display = 'block';
-            document.getElementById('modal-overlay').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-            document.getElementById('modal-overlay').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
