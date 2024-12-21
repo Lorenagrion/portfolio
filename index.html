@@ -105,7 +105,7 @@
 </head>
 <body>
     <header>
-        <h1>Portfólio - Lorena Pires Griñón</h1>
+        <h1>Portfólio - Lorena Pires Griõn</h1>
     </header>
     <nav>
         <a href="#formacao">Formação</a>
@@ -136,16 +136,17 @@
             <li><button onclick="showModal('sap')">Implementação do SAP S4 Hana na área de BI</button></li>
             <li><button onclick="showModal('pnd')">Digitalização de processos de P&D na Granado</button></li>
             <li><button onclick="showModal('integracao')">Integração com Uber, Ifood e Rappi</button></li>
+            <li><button onclick="showModal('financeiro')">Implementação de sistemas financeiros e contábeis</button></li>
+            <li><button onclick="showModal('ml')">Projetos de Machine Learning para sugestão de vendas e abastecimento de estoque</button></li>
         </ul>
     </section>
     <section id="contato">
         <h2>Contato</h2>
-        <p>Email: lorena@example.com</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/lorena-p-751965117/" target="_blank">Lorena Pires</a></p>
         <p>GitHub: <a href="https://github.com/lorenag" target="_blank">lorenag</a></p>
     </section>
     <footer>
-        <p>&copy; 2024 Lorena Pires Griñón. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Lorena Pires Griõn. Todos os direitos reservados.</p>
     </footer>
     <div class="modal-overlay" id="modal-overlay"></div>
     <div class="modal" id="modal">
@@ -161,9 +162,11 @@
 
         function showModal(project) {
             const content = {
-                sap: "Detalhes sobre a implementação do SAP S4 Hana: Projeto que envolveu a melhoria de processos de BI com foco em eficiência e integração.",
-                pnd: "Detalhes sobre a digitalização de processos de P&D na Granado: Solução que conectou áreas e promoveu maior visibilidade operacional.",
-                integracao: "Detalhes sobre a integração com Uber, Ifood e Rappi: Estruturação de APIs para otimizar entregas e processos logísticos."
+                sap: "Projeto que envolveu a melhoria de processos de BI com foco em eficiência e integração.",
+                pnd: "Solução que conectou áreas e promoveu maior visibilidade operacional.",
+                integracao: "Estruturação de APIs para otimizar entregas e processos logísticos.",
+                financeiro: "Implementação de sistemas financeiros e contábeis que melhoraram a gestão de fluxo de caixa e consolida orçamento.",
+                ml: "Projeto de Machine Learning para sugerir vendas e otimizar o abastecimento de estoque, reduzindo desperdícios e aumentando a receita."
             };
             document.getElementById('modal-content').innerText = content[project];
             document.getElementById('modal').style.display = 'block';
