@@ -3,234 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Lorena Pires Griñón">
-    <title>Portfólio - Lorena Pires Griñón</title>
+    <title>Portfólio - Lorena Pires Griõn</title>
     <style>
-        /* Reset de estilos */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f5f5f5;
             color: #333;
-            line-height: 1.6;
         }
-
         header {
-            background-color: #1a73e8; /* Azul mais suave */
+            background-color: #4CAF50;
             color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 3px solid #005a8e; /* Linha separadora sutil */
-        }
-
-        header h1 {
-            font-size: 36px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 40px auto;
             padding: 20px;
-        }
-
-        h2 {
-            color: #1a73e8; /* Azul suave */
-            font-size: 28px;
-            margin-bottom: 20px;
             text-align: center;
         }
-
-        section {
-            margin-bottom: 30px;
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
-        .experience-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .experience-card h3 {
-            font-size: 24px;
-            color: #005a8e; /* Azul mais escuro */
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            font-size: 16px;
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        ul li:before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: #1a73e8; /* Azul mais suave */
-        }
-
-        footer {
-            background-color: #005a8e; /* Azul mais escuro */
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        footer p {
-            font-size: 16px;
-        }
-
-        footer a {
+        nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
         }
-
-        footer a:hover {
-            text-decoration: underline;
+        nav a:hover {
+            background-color: #4CAF50;
         }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 28px;
-            }
-
-            header p {
-                font-size: 18px;
-            }
-
-            .container {
-                width: 95%;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .experience-card h3 {
-                font-size: 20px;
-            }
-
-            ul li {
-                font-size: 14px;
-            }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        .button-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .button-top:hover {
+            background-color: #45a049;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .modal button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Portfólio de Lorena Pires Griñón</h1>
-    <p>Profissional de TI | Product Owner | Dados e Desenvolvimento</p>
-</header>
-
-<div class="container">
-
-    <section>
-        <h2>Resumo</h2>
-        <p>Sou uma profissional com mais de 5 anos de experiência em Tecnologia da Informação, especializada em desenvolvimento de sistemas, gestão de dados e implementação de soluções em cloud. Tenho forte atuação em metodologias ágeis, gestão de equipes multidisciplinares e foco em resultados de negócios. Tenho expertise em SQL Server, Azure, Google Cloud e SAP S4 Hana, além de ser uma entusiasta na democratização de dados.</p>
+    <header>
+        <h1>Portfólio - Lorena Pires Griñón</h1>
+    </header>
+    <nav>
+        <a href="#formacao">Formação</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <section id="formacao">
+        <h2>Formação</h2>
+        <ul>
+            <li>Master's degree em Sistemas de Computação - UFRJ</li>
+            <li>Especialização em Informática e Educação - CEFET</li>
+            <li>Pós-graduação em Machine Learning - IGTI</li>
+            <li>Bacharelado em Gestão Financeira - Estácio de Sá</li>
+        </ul>
     </section>
-
-    <section>
+    <section id="experiencia">
         <h2>Experiência Profissional</h2>
-
-        <div class="experience-card">
-            <h3>Granado Pharmácias (Gestão de Dados e Desenvolvimento de Software)</h3>
-            <ul>
-                <li><strong>Sistema de Esgotamento de Produtos:</strong> Digitalizei o processo de esgotamento, conectando áreas e otimizando recursos com foco em soluções de baixo custo.</li>
-                <li><strong>Sistemas Satélites:</strong> Desenvolvi funcionalidades para todos os sistemas satélites da empresa, aplicando metodologias ágeis e técnicas de discovery.</li>
-                <li><strong>Gestão de Equipe e Integração de Dados:</strong> Lidero um time de 9 pessoas, desenvolvendo soluções de integração e processamento de dados.</li>
-                <li><strong>Integrações com Uber, iFood e Rappi:</strong> Implementei integrações de dados com Uber, iFood e Rappi, ampliando a eficiência e conectividade com parceiros.</li>
-                <li><strong>Projeto de Cloud (Google):</strong> Participei da implementação do projeto de cloud, expandindo o uso de dados para áreas não atendidas antes.</li>
-                <li><strong>Ecossistema de Negócios:</strong> Aprofundei meu conhecimento nas áreas de compras, fabricação, vendas B2B/B2C e operações omnichannel e internacionais.</li>
-                <li><strong>Tecnologias Azure, Google e On-Premise:</strong> Trabalhei com soluções on-premise, SQL Server, Azure e Google Cloud, sempre aplicando metodologias ágeis para resultados rápidos.</li>
-                <li><strong>Implementação de SAP S4 Hana:</strong> Participei da implementação de SAP S4 Hana na área de BI, otimizando a integração e análise de dados.</li>
-            </ul>
-        </div>
-
-        <div class="experience-card">
-            <h3>D'Or (Evolução e Suporte de Produtos)</h3>
-            <ul>
-                <li><strong>Refatoração de Sistema:</strong> Conduzi a migração para microsserviços, implementando segurança avançada e planos de disaster recovery.</li>
-                <li><strong>Expansão de Mercado:</strong> Auxiliei na implantação do Gnesys, gerando um aumento de 200% nas vendas.</li>
-                <li><strong>Manutenção de Dados:</strong> Ajustei sistemas legados e implementei melhorias na nova versão do produto.</li>
-                <li><strong>Gestão Ágil e Liderança:</strong> Coordenei equipes multidisciplinares, garantindo entregas eficientes e alinhamento com stakeholders.</li>
-            </ul>
-        </div>
-
-        <div class="experience-card">
-            <h3>B2W (Carreira Inicial em Tecnologia)</h3>
-            <ul>
-                <li><strong>Democratização de Dados:</strong> Apoiei iniciativas em GCP, melhorando o acesso a dados e a tomada de decisão estratégica.</li>
-                <li><strong>Educação Corporativa:</strong> Produzi e ministrei cursos de Excel na Academia B2W, capacitando colaboradores internamente.</li>
-                <li><strong>Gestão Ágil:</strong> Como Scrum Master, liderei equipes, facilitando cerimônias ágeis para entregas de alto impacto.</li>
-                <li><strong>Mediação de Eventos:</strong> Mediando meetups sobre dados, alcancei colaboradores e o público externo, ampliando o reconhecimento da empresa no mercado de dados.</li>
-            </ul>
-        </div>
-
-    </section>
-
-    <section>
-        <h2>Formações Acadêmicas</h2>
         <ul>
-            <li>2022: Mestrado em Sistemas de Computação - Universidade Federal do Rio de Janeiro (UFRJ);</li>
-            <li>2020: Pós-graduação em Educação Tecnológica - Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (Cefet/RJ);</li>
-            <li>2019: MBA em Machine Learning - Instituto de Gestão e Tecnologia da Informação (IGTI);</li>
-            <li>2019: Ciência da Computação - Universidade Veiga de Almeida (UVA) (Trancado – 5º período);</li>
-            <li>2016: Gestão Financeira - Universidade Estácio de Sá.</li>
+            <li><strong>Granado Pharmácias</strong>: Product Owner nas áreas de sistemas e dados. Trabalhei no desenvolvimento de sistemas de gestão de processos, digitalizando fluxos internos e promovendo maior integração entre as áreas. Na área de dados, gerenciei a implementação de soluções de integração e processamento, utilizando tecnologias cloud e on-premise.</li>
+            <li><strong>D'Or PME</strong>: Participei da criação e desenvolvimento do Gnesys, um produto inovador voltado para pequenas e médias empresas no segmento de saúde, atuando como ponto focal para levantamento de requisitos e acompanhamento das entregas.</li>
+            <li><strong>B2W</strong>: Atuei em projetos de democratização de dados utilizando a infraestrutura em nuvem da Google Cloud Platform, além de criar cursos para a B2W Academy e mediar eventos voltados para a troca de conhecimento técnico e estratégico.</li>
         </ul>
     </section>
-
-    <section>
-        <h2>Certificações</h2>
+    <section id="projetos">
+        <h2>Principais Projetos</h2>
         <ul>
-            <li>Lean Inception Facilitator (Caroli.org, 2023);</li>
-            <li>Proficiência em inglês pelo Duolingo English Test: 70.</li>
+            <li><button onclick="showModal('sap')">Implementação do SAP S4 Hana na área de BI</button></li>
+            <li><button onclick="showModal('pnd')">Digitalização de processos de P&D na Granado</button></li>
+            <li><button onclick="showModal('integracao')">Integração com Uber, Ifood e Rappi</button></li>
         </ul>
     </section>
-
-    <section>
-        <h2>Referências</h2>
-        <ul>
-            <li><a href="https://www.ppgi.ufrj.br/2022/08/08/fwd-defesa-de-mestrado-lorena-pires-grion/" target="_blank">Dissertação de Mestrado - Sistemas de Computação (UFRJ)</a></li>
-            <li><a href="https://www.researchgate.net/publication/351235743_Technology_Adoption_for_Brazilian_Socioemotional_Initiatives_at_School" target="_blank">Artigo - Technology Adoption for Brazilian Socioemotional Initiatives at School</a></li>
-            <li><a href="https://journals-sol.sbc.org.br/index.php/jis/article/view/2686" target="_blank">Artigo Publicado - SBC JIS</a></li>
-
-        </ul>
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: lorena@example.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/lorena-p-751965117/" target="_blank">Lorena Pires</a></p>
+        <p>GitHub: <a href="https://github.com/lorenag" target="_blank">lorenag</a></p>
     </section>
+    <footer>
+        <p>&copy; 2024 Lorena Pires Griñón. Todos os direitos reservados.</p>
+    </footer>
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="modal">
+        <p id="modal-content"></p>
+        <button onclick="closeModal()">Fechar</button>
+    </div>
+    <button class="button-top" onclick="scrollToTop()">&#8679;</button>
 
-</div>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-<footer>
-    <p>Contato: Medium: <a href="https://medium.com/@lorenagrion" target="_blank">@lorenagrion</a> | LinkedIn: <a href="hhttps://www.linkedin.com/in/lorena-p-751965117/" target="_blank">linkedin.com/in/lorena-p-751965117</a></p>
-</footer>
+        function showModal(project) {
+            const content = {
+                sap: "Detalhes sobre a implementação do SAP S4 Hana: Projeto que envolveu a melhoria de processos de BI com foco em eficiência e integração.",
+                pnd: "Detalhes sobre a digitalização de processos de P&D na Granado: Solução que conectou áreas e promoveu maior visibilidade operacional.",
+                integracao: "Detalhes sobre a integração com Uber, Ifood e Rappi: Estruturação de APIs para otimizar entregas e processos logísticos."
+            };
+            document.getElementById('modal-content').innerText = content[project];
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('modal-overlay').style.display = 'block';
+        }
 
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('modal-overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
